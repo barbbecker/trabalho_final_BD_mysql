@@ -70,8 +70,7 @@ END $$
 
 delimiter ;
 
-CALL reservar (6, 11, 1);
-CALL reservar (3, 17, 2);
+CALL reservar (2, 19, 1);
 
 /*VIEW*/
 /*VIEW - TODOS EMPRESTIMOS*/
