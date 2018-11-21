@@ -7,7 +7,7 @@ SELECT * FROM emprestimo;
 SELECT a.nome_aluno as Nome, l.nome_livro as Livro, e.data_emprestimo as Emprestimo, e.data_previsao as Previsao_entrega, e.data_devolucao as Devolucao
 FROM emprestimo e
 JOIN aluno a
-ON e.id_aluno_fk = e.id_aluno_fk
+ON a.id_aluno = e.id_aluno_fk
 JOIN livro l
 ON l.id_livro = e.id_livro_fk
 WHERE a.nome_aluno = 'José da Silva'
