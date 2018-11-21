@@ -3,6 +3,17 @@ SELECT * FROM aluno;
 SELECT * FROM atendente;
 SELECT * FROM emprestimo;
 
+/*4 retiradas de livros por cada aluno, metade entregues por um atendente, metade pelo outro*/
+SELECT a.nome_aluno as Nome, l.nome_livro as Livro, e.data_emprestimo as Emprestimo, e.data_devolucao as Devolucao, atd.nome_atendente as Atendente
+FROM emprestimo e
+JOIN aluno a
+ON a.id_aluno = e.id_aluno_fk
+JOIN livro l
+ON l.id_livro = e.id_livro_fk
+JOIN atendente atd
+ON atd.id_atendente = e.id_atendente_fk
+ORDER BY atd.nome_atendente;
+
 /*Problema A*/
 SELECT a.nome_aluno as Nome, l.nome_livro as Livro, e.data_emprestimo as Emprestimo, e.data_previsao as Previsao_entrega, e.data_devolucao as Devolucao
 FROM emprestimo e
